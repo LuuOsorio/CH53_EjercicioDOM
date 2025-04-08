@@ -1,4 +1,4 @@
-# CH53_EjercicioDOM
+# CH53 EjercicioDOM
 ## Ejercicio Document Object Model (DOM)
 
 Tareas por realizar:
