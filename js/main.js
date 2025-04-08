@@ -55,9 +55,29 @@ btnMostrar.addEventListener("click", function (event) {
     //prepend Inserta el elemento al principio de la lista
     // listas.item(0).prepend(element2);
     //append Inserta el elemento al final de la lista
-    listas.item(0).append(element);
+    //listas.item(0).append(element);
     //after Inserta el elemento después de la lista
-    listas.item(0).after(element2);
+    //listas.item(0).after(element2);
+
+
+    //     //afterbegin Inserta el elemento al principio de la lista
+    // listas.item(1).insertAdjacentElement("afterbegin", element);
+    // //beforeend Inserta el elemento al final de la lista
+    // listas.item(1).insertAdjacentElement("beforeend", element2);
 
     //hay que clonar más elementos, para poder ver todos de lo contrario continua haciendo las propiedades finales
+    
+    
+    listas.item(1).insertAdjacentHTML("beforebegin",
+        `<li class="list-group-item">Before Begin item</li>`);
+
+    listas.item(1).insertAdjacentHTML("afterend",
+        `<li class="list-group-item">After End item</li>`);
+
+    listas.item(1).insertAdjacentHTML("afterbegin",
+        `<li class="list-group-item">After Begin Item</li>`);
+
+    listas.item(1).insertAdjacentHTML("beforeend",
+        `<li class="list-group-item">Before End item</li>`);
+
 });
