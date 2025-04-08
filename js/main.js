@@ -37,8 +37,27 @@ function modifica() {
     //console.log(encabezado2.innerText);
 }
 
-btnMostrar.addEventListener("click", function (event){
+btnMostrar.addEventListener("click", function (event) {
     event.preventDefault(); // no hagas lo que haces por defwcto
     console.log("botón btnModificar presionado");
-    
+
+
+    // Accediendo a los elementos de las listas
+
+    let element = document.createElement("li"); //solo necesita como se llama la etiqueta
+    element.innerText = "Anoter item"; // <li>Anoter item</li>
+    element.classList.add("list-group-item");
+
+    let element2 = element.cloneNode(true); // se hacen  dos elements
+
+    //before Inserta el elemento antes de la lista
+    // listas.item(0).before(element);
+    //prepend Inserta el elemento al principio de la lista
+    // listas.item(0).prepend(element2);
+    //append Inserta el elemento al final de la lista
+    listas.item(0).append(element);
+    //after Inserta el elemento después de la lista
+    listas.item(0).after(element2);
+
+    //hay que clonar más elementos, para poder ver todos de lo contrario continua haciendo las propiedades finales
 });
