@@ -18,3 +18,6 @@ git commit -m "mensaje"
 git push origin main
 
 ```
+> Vista previa del index.html
+
+! [index](https://raw.githubusercontent.com/LuuOsorio/CH53_EjercicioDOM/refs/heads/main/images/index.jpg)
