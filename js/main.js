@@ -1,11 +1,13 @@
 let btnMostrar = document.getElementById("btnMostrar");
 
 
-
+// definiendo variables
 let encabezado1 = document.getElementById("encabezado1");  //trae un elemento
 let encabezado2 = document.getElementById("encabezado2");
 let listas = document.getElementsByTagName("ul");  //trae varios elementos y esta viva
-
+let txtRFC = document.getElementById("txtRFC");
+let txtTelefono = document.getElementById("txtTelefono");
+let txtCURP = document.getElementById("txtCURP");
 
 let elementos = document.getElementsByClassName("list-group-item");
 
@@ -66,8 +68,8 @@ btnMostrar.addEventListener("click", function (event) {
     // listas.item(1).insertAdjacentElement("beforeend", element2);
 
     //hay que clonar más elementos, para poder ver todos de lo contrario continua haciendo las propiedades finales
-    
-    
+
+
     listas.item(1).insertAdjacentHTML("beforebegin",
         `<li class="list-group-item">Before Begin item</li>`);
 
@@ -80,4 +82,48 @@ btnMostrar.addEventListener("click", function (event) {
     listas.item(1).insertAdjacentHTML("beforeend",
         `<li class="list-group-item">Before End item</li>`);
 
-});
+}); //btnMostrar
+
+
+//Se ejecuta cuando termina de cargar todos los elementos de la página
+window.addEventListener("load", function (event) {
+    console.log("Se termino de cargar la página");
+}); //load
+
+
+
+
+//blur -> cuando se sale del campo 
+
+// txtRFC.addEventListener("blur", function (event) {
+//     event.preventDefault();  // no hagas lo que haces pordefecto
+//     txtRFC.value = txtRFC.value.toUpperCase();  // value: lo que se escribe dentro //toUpperCase para MAYUSCULAS
+//     //target hace referencia a RFC
+// }); //txtRFC
+
+// txtCURP.addEventListener("blur", function (event) {
+//     event.preventDefault();
+//     txtCURP.value = txtCURP.value.toUpperCase;  //slice recorta lo que se escribe
+// });//txtCurp
+
+// txtTelefono.addEventListener("blur", function (event) {
+//     event.preventDefault();
+//     txtTelefono.value = txtTelefono.value.trim().slice(0, 10);  //slice recorta lo que se escribe
+// }); //txtTelefono
+
+
+
+//OPTIMIZANDO cuando se repiten las mismas modificaciones
+
+function txtToUpper(event) {
+    event.target.value = event.target.value.trim().toUpperCase();
+}// txtToUpper
+
+txtRFC.addEventListener("blur", txtToUpper); //txtRFC
+txtCURP.addEventListener("blur", txtToUpper); //txtCURP
+
+
+txtTelefono.addEventListener("blur", function (event) {
+    event.preventDefault();
+    txtTelefono.value = txtTelefono.value.trim().slice(0, 10);  //slice recorta lo que se escribe demás dependiento el valor 
+}); //txtTelefono
